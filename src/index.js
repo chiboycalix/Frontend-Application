@@ -10,9 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const history = createBrowserHistory();
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App history={history} />
-	</React.StrictMode>,
+	<App history={history} />,
 	document.getElementById('root')
 );
 

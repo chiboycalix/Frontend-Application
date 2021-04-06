@@ -16,7 +16,7 @@ export const getProduct = () => async (dispatch) => {
 	dispatch(clearProductErrors());
 	dispatch(productLoading());
 	try {
-		const productRequest = await APIService.get(`/product/6781`);
+		const productRequest = await APIService.get(`/product/6781/`);
 		dispatch(getProductSuccess(productRequest.data));
 		return { fulfilled: true, message: 'Product fetched successfully' };
 	} catch (error) {

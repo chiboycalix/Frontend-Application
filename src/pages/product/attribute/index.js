@@ -33,7 +33,7 @@ const Attribute = (props) => {
 					props?.trl?.getTrlSuccess?.map((trl) => {
 						return (
 							<>
-								<input type="radio" id={trl.name} name="trl" value={trl?.id} checked={trl.id == trlValue ? "checked" : null} onChange={handleSelectTrl} />
+								<input type="radio" id={trl.name} name="trl" value={trl?.id} checked={trl.id === trlValue ? "checked" : null} onChange={handleSelectTrl} />
 								<label htmlFor={trl?.name}>{trl?.name}</label><br />
 							</>
 						)

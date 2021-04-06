@@ -6,21 +6,22 @@ import './styles/header.scss';
 import { getConfig } from '../../redux/actions/config/config.actions';
 
 const Header = (props) => {
+	const { getConfig, setConfig } = props;
 
-	const fetchConfig = async () => {
-		const response = await props?.getConfig();
-		props?.setConfig(response);
-		return response;
-	}
 
 	React.useEffect(() => {
+		const fetchConfig = async () => {
+			const response = await getConfig();
+			setConfig(response);
+			return response;
+		}
 		fetchConfig();
-	}, []);
+	}, [getConfig, setConfig]);
 
 	return (
 		<header style={{ backgroundColor: props.config.getConfigSuccess.mainColor }}>
 			<div className="logo">
-				<i class="fas fa-bars" onClick={props.toogleSideBar}></i>
+				<i className="fas fa-bars" onClick={props.toogleSideBar}></i>
 				<img src={props?.config?.getConfigSuccess?.logo} alt="logo" style={{ width: "50px", header: "10px" }} />
 			</div>
 			<div></div>

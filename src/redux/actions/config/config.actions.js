@@ -13,7 +13,7 @@ export const getConfig = () => async (dispatch) => {
   dispatch(clearConfigErrors());
   dispatch(getConfigLoading());
   try {
-    const configRequest = await APIService.get(`/configuration/${process.env.REACT_APP_ID || 1}`);
+    const configRequest = await APIService.get(`/configuration/${process.env.REACT_APP_ID || 1}/`);
     dispatch(getConfigSuccess(configRequest.data));
     return { fulfilled: true, message: 'Config fetched successfully', config: configRequest.data };
   } catch (error) {

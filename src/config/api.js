@@ -1,11 +1,7 @@
-/** @format */
-
 import axios from 'axios';
 
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-
 export const instance = axios.create({
-	baseURL:proxyUrl+ process.env.REACT_APP_BASE_URL,
+	baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 const useConfig = (config) => {

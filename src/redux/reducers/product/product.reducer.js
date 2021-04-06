@@ -36,7 +36,6 @@ export const productReducer = (state = productInitialState, action) => {
 			};
 
 		case productTypes.EDIT_PRODUCT_LOADING:
-			console.log(action.payload, 'loading')
 			return {
 				...state,
 				editProductLoading: action.payload,
