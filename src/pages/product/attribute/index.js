@@ -31,11 +31,12 @@ const Attribute = (props) => {
 				<p>{props.product.trl.name}</p>
 				{
 					props?.trl?.getTrlSuccess?.map((trl) => {
+
 						return (
-							<>
-								<input type="radio" id={trl.name} name="trl" value={trl?.id} checked={trl.id === trlValue ? "checked" : null} onChange={handleSelectTrl} />
+							<React.Fragment key={trl.id}>
+								<input type="radio" id={trl.name} name="trl" value={trl?.id} checked={parseInt(trl.id) === trlValue ? "checked" : null} onChange={handleSelectTrl} />
 								<label htmlFor={trl?.name}>{trl?.name}</label><br />
-							</>
+							</React.Fragment>
 						)
 
 					})
